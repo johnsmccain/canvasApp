@@ -33,12 +33,12 @@ function App() {
 
   const savePhoto = async () => {
     
-    const a = document.createElement("a");
-    const canvas = document.createElement("canvas");
+    const a:HTMLAnchorElement = document.createElement("a");
+    const canvas:HTMLCanvasElement = document.createElement("canvas");
     const previewImg:any = document.querySelector(".preview-img");
 
-    let newImg = new Image();
-    let ctx:any = canvas.getContext("2d");
+    let newImg:HTMLImageElement = new Image();
+    let ctx: any = canvas.getContext("2d");
 
     /**
      * Setting crossOrigin to anonymous on newImg
