@@ -4,6 +4,10 @@ import './app.scss';
 // import two from "./assets/two.jpg"
 // import three from "./assets/three.jpg"
 // import four from "./assets/four.jpg"
+
+interface GenericFunction {
+  (): Promise<void>
+}
 function App() {
 
   const [name, setName] = useState<string>();
@@ -11,7 +15,7 @@ function App() {
   const [photos, setPhotos] = useState<string[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
 
-  const generatePhotos = async () => {
+  const generatePhotos: GenericFunction = async () => {
 
     setPhoto("")
     setLoading(true)
@@ -31,7 +35,7 @@ function App() {
     // setPhotos([one, two, three, four]);
   }
 
-  const savePhoto = async () => {
+  const savePhoto: GenericFunction = async () => {
     
     const a:HTMLAnchorElement = document.createElement("a");
     const canvas:HTMLCanvasElement = document.createElement("canvas");
